@@ -141,22 +141,19 @@ app.get('/findByEmail/:email', (req,res) => {
 
 // creating post with reference to a comment
 
-// const createPosts = async () => {
-    // const refPost = new Post({
-    //     title: 'testing post 1003',
-    //     body: 'Body for ref by comments', 
-    // });
+const refPost = new Post({
+    title: 'testing post 1004',
+    body: 'Body for ref by comments', 
+});
 
-    // const refComment = new Comment({
-    //     header: "Our ref comment tester",
-    //     content: 'this is my ref comment text',
-    // });
-    // refComment.save();
+const refComment = new Comment({
+    header: "Our ref comment tester",
+    content: 'this is my ref comment text',
+});
+refComment.save();
 
-    // refPost.refComments.push(refComment);
-    // refPost.save();
-// };
-// await createPosts();
+refPost.refComments.push(refComment);
+refPost.save();
 
 // find all comments on a post by ref
 // populate should be done via the field name on the parent document, in this case post, so because our refComments are on post.refComments we'll pass 'refComments' into our populate method
