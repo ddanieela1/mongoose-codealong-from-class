@@ -165,7 +165,7 @@ app.post('/comments', (req, res) => {
     })
     .then(post => {
         console.log('New comment =>>', comment);
-        res.json({ comment: comment });
+        res.json({ comment:comment });
     })
     .catch(error => { 
         console.log('error', error) 
@@ -233,7 +233,7 @@ app.put('/post/:title', (req, res) => {
 
 
 //udate comment
-app.put('/post/:comment', (req, res) => {
+app.put('/comment/:header', (req, res) => {
     console.log('route is being on PUT')
     Comment.findOne({ header: req.params.header })
     .then(foundComment => {
